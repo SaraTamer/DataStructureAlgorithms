@@ -3,11 +3,30 @@
 #include "SingleLinkedList.h"
 #include "Array-basedList.h"
 #include "DoublyLinkedList.h"
+#include "CircularLinkedList.h"
 
 using namespace std;
 
 int main()
 {
+//// Circular linked list testing:
+
+//    CircularLinkedList<int> list;
+//    list.insertAtHead(3 );
+//    list.insertAtHead(4 );
+//    list.insertAtHead(2 );
+//    list.insertAt(100 , 2);
+//    list.insertAt(200 , 1);
+//    list.replaceAt(500 , 4);
+//    list.removeAtHead();
+//    list.removeAtTail();
+//    list.removeAt(1);
+//    cout << list.isExist(100) << '\n';
+//    cout << list.isItemAtEqual(100 , 1) << '\n';
+//    list.print();
+//    list.clear();
+//    cout << list.retrieveAt(3);
+
 //// Doubly linked list testing:
 
 //    DoublyLinkedList<int> list;
