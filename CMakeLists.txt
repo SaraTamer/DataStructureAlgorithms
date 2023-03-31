@@ -3,4 +3,4 @@ project(DataStructureAlgorithms)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(DataStructureAlgorithms main.cpp)
+add_executable(DataStructureAlgorithms main.cpp Stack.h SingleLinkedList.h)
