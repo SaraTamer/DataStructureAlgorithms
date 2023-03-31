@@ -100,7 +100,6 @@ public:
             sz++;
         }
     }
-    ////TODO: insertAfter(Node* prev, ll index)
 
     void removeAtHead()
     {
@@ -248,7 +247,19 @@ public:
     ll size(){return sz;}
     bool isEmpty(){return (sz == 0);}
 
-
+    ~DoublyLinkedList()
+    {
+        Node *tmp = new Node;
+        for(ll i = 0; i < sz; i++)
+        {
+            tmp = head;
+            head = head->next;
+            delete tmp;
+        }
+        tail = nullptr;
+        sz = 0;
+    }
+//// TODO: swap , reverse , insertAfter
 };
 
 

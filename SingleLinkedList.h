@@ -218,7 +218,19 @@ public:
         }
         cout << '\n';
     }
-//// TODO: destructor , clear , swap
+    ~SingleLinkedList()
+    {
+        Node *tmp = new Node;
+        for(ll i = 0; i < sz; i++)
+        {
+            tmp = head;
+            head = head->next;
+            delete tmp;
+        }
+        tail = nullptr;
+        sz = 0;
+    }
+//// TODO: swap
 
 };
 
