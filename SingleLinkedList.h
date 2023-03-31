@@ -33,11 +33,11 @@ public:
         head = nullptr;
         tail = nullptr;
     }
-    void insertFirst(T item)
+    void insertAtHead(T item)
     {
         Node* tmp = new Node;
         tmp->value = item;
-        if(sz == 0)
+        if(isEmpty())
         {
             tail = head = tmp;
             tmp->next = nullptr;
@@ -50,11 +50,11 @@ public:
         sz++;
 
     }
-    void insertLast(T item)
+    void insertAtTail(T item)
     {
         Node* tmp = new Node;
         tmp->value = item;
-        if(sz == 0) {
+        if(isEmpty()) {
             head = tail = tmp;
         }
         else {
@@ -74,11 +74,11 @@ public:
         }
         if(index == 0)
         {
-            insertFirst(item);
+            insertAtHead(item);
         }
         else if(index == sz)
         {
-            insertLast(item);
+            insertAtTail(item);
         }
         else
         {
@@ -94,10 +94,80 @@ public:
             sz++;
         }
     }
+    void removeAtHead()
+    {
+        if(isEmpty())
+        {
+            cout << "The list is EMPTY!\n";
+            return;
+        }
+        head = head->next;
+        sz--;
+    }
+    void removeAtTail()
+    {
+        if(isEmpty())
+        {
+            cout << "The list is EMPTY!\n";
+            return;
+        }
+        Node* tmp = head;
+        for(ll i = 0; i < sz - 1; i++)
+        {
+            tmp = tmp->next;
+        }
+        tail = tmp;
+        sz--;
+    }
+    void removeAt(ll index)
+    {
+        if(isEmpty())
+        {
+            cout << "The list is EMPTY!\n";
+            return;
+        }
+        if(index < 0 || index >= sz)
+        {
+            cout << "Position out of scope!\n";
+            return;
+        }
+        if(index == 0)
+        {
+            removeAtHead();
+            return;
+        }
+        if (index == sz-1)
+        {
+            removeAtTail();
+            return;
+        }
+        Node* tmp = head;
+        for(int i = 0; i < index - 1; i++)
+        {
+            tmp = tmp->next;
+        }
+        tmp->next = tmp->next->next;
+        sz--;
+    }
+    T retrieveAt(ll index)
+    {
+        if(index >= sz || index < 0)
+        {
+            cout << "Position out of scope!\n";
+            exit(1);
+        }
+        Node* tmp = head;
+        for(ll i = 0; i < index; i++)
+        {
+            tmp = tmp->next;
+        }
+        return tmp->value;
+    }
     bool isEmpty()
     {
-        return (head == nullptr);
+        return (sz == 0);
     }
+    ll size(){return sz;}
     void print()
     {
         Node* tmp = head;
@@ -106,6 +176,7 @@ public:
             cout << tmp->value << ' ';
             tmp = tmp->next;
         }
+        cout << '\n';
     }
 };
 

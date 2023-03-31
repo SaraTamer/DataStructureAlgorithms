@@ -5,17 +5,21 @@
 
 int main()
 {
-// single linked list testing:
+//// single linked list testing:
 
     SingleLinkedList<int> intList;
-    intList.insertFirst(3 );
-    intList.insertFirst(4 );
-    intList.insertFirst(2 );
+    intList.insertAtHead(3 );
+    intList.insertAtHead(4 );
+    intList.insertAtHead(2 );
     intList.insertAt(100 , 2);
     intList.insertAt(200 , 1);
+//    intList.removeAtHead();
+//    intList.removeAtTail();
+//    intList.removeAt(1);
     intList.print();
+    cout << intList.retrieveAt(3);
 
-// stack testing
+//// stack testing
 
 //    Stack<int> intStack(5);
 //    intStack.push(100);
