@@ -163,6 +163,46 @@ public:
         }
         return tmp->value;
     }
+    void replaceAt(T item , ll index)
+    {
+        if(index < 0 || index >= sz)
+        {
+            cout << "Position out of scope!\n";
+            return;
+        }
+        Node* tmp = head;
+        for(ll i = 0; i < index; i++)
+        {
+            tmp = tmp->next;
+        }
+        tmp->value = item;
+    }
+    bool isExist(T item)
+    {
+        Node* tmp = head;
+        for(ll i = 0; i < sz; i++)
+        {
+            if(tmp->value == item)
+                return true;
+            tmp = tmp->next;
+        }
+        return false;
+    }
+    bool isItemAtEqual(T item , ll index)
+    {
+        if(index < 0 || index >= sz)
+        {
+            cout << "Position out of scope!\n";
+            exit(1);
+        }
+        Node* tmp = head;
+        for(ll i = 0; i < index; i++)
+        {
+            tmp = tmp->next;
+        }
+        return (tmp->value == item);
+    }
+    void clear(){sz = 0;}
     bool isEmpty()
     {
         return (sz == 0);
@@ -178,6 +218,8 @@ public:
         }
         cout << '\n';
     }
+//// TODO: destructor , clear , swap
+
 };
 
 
