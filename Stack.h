@@ -129,9 +129,5 @@ public:
 };
 
 
-class Stack {
-
-};
-
 
 #endif //DATASTRUCTUREALGORITHMS_STACK_H

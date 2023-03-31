@@ -72,24 +72,27 @@ public:
             cout << "Position out of scope!\n";
             return;
         }
-        Node* tmp = new Node;
-        tmp->value = item;
         if(index == 0)
         {
             insertFirst(item);
         }
-        else if(index == sz-1)
+        else if(index == sz)
         {
             insertLast(item);
         }
         else
         {
-            while(tmp->next != nullptr)
+            Node* tmp = head;
+            Node* newNode = new Node;
+            newNode->value = item;
+            for(ll i = 0; i < index - 1; i++)
             {
                 tmp = tmp->next;
             }
+            newNode->next = tmp->next;
+            tmp->next = newNode;
+            sz++;
         }
-        sz++;
     }
     bool isEmpty()
     {
