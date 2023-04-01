@@ -170,11 +170,12 @@ public:
     }
     T retrieveAt(ll index)
     {
-        if(index >= sz || index < 0)
+        if(isEmpty())
         {
-            cout << "Position out of scope!\n";
+            cout << "The list is EMPTY!\n";
             exit(1);
         }
+
         Node* tmp = head;
         for(ll i = 0; i < index; i++)
         {
@@ -209,11 +210,12 @@ public:
     }
     bool isItemAtEqual(T item , ll index)
     {
-        if(index < 0 || index >= sz)
+        if(isEmpty())
         {
-            cout << "Position out of scope!\n";
+            cout << "The list is EMPTY!\n";
             exit(1);
         }
+
         Node* tmp = head;
         for(ll i = 0; i < index; i++)
         {

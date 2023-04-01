@@ -55,15 +55,23 @@ public:
     }
     void print()
     {
-        for(ll i = front; i != (rear + 1) % maxSz; i = (i+1) % maxSz)
+        for(ll i = front , j = 0; j < sz ; i = (i+1) % maxSz , j++)
         {
             cout << arr[i] << ' ';
         }
         cout << '\n';
     }
-    void clear(){sz = 0;}
+    T first()
+    {
+        if(isEmpty())
+        {
+            cout << "The list is EMPTY!\n";
+            exit(1);
+        }
+        return arr[front];
+    }
+    void clear(){sz = 0; arr = nullptr;}
     ll size(){return sz;}
-    T first(){return arr[front];}
     bool isEmpty(){return (sz == 0);}
     bool isFull(){return (sz == maxSz);}
     ~CircularQueue(){delete[] arr;}
