@@ -4,11 +4,17 @@
 #include "Array-basedList.h"
 #include "DoublyLinkedList.h"
 #include "CircularLinkedList.h"
+#include "Queue.h"
 
 using namespace std;
 
 int main()
 {
+
+//// Circular Array Queue testing:
+
+    CircularQueue<int> queue;
+    ////TODO: testing
 //// Circular linked list testing:
 
 //    CircularLinkedList<int> list;
