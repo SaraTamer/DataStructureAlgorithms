@@ -5,16 +5,54 @@
 #include "DoublyLinkedList.h"
 #include "CircularLinkedList.h"
 #include "Queue.h"
+#include "LinkedQueue.h"
 
 using namespace std;
 
 int main()
 {
+//// Listed Queue testing:
+
+//    LinkedQueue<int> queue;
+
+//    queue.enqueue(1);
+//    queue.enqueue(2);
+//    queue.enqueue(3);
+//    queue.enqueue(4);
+//    queue.enqueue(5);
+//    queue.clear();
+//    queue.enqueue(5);
+//    queue.dequeue();
+//    queue.dequeue();
+//    queue.dequeue();
+//    queue.dequeue();
+//    queue.dequeue();
+//    queue.dequeue();
+//    cout << queue.first() << ' ' << queue.size() << ' ';
+//    queue.print();
+
 
 //// Circular Array Queue testing:
 
-    CircularQueue<int> queue;
-    ////TODO: testing
+//    CircularQueue<int> queue(5);
+
+//    queue.enqueue(1);
+//    queue.enqueue(2);
+//    queue.enqueue(3);
+//    queue.enqueue(4);
+//    queue.enqueue(5);
+//    queue.clear();
+//    queue.enqueue(5);
+//    queue.dequeue();
+//    queue.dequeue();
+//    queue.dequeue();
+//    queue.dequeue();
+//    queue.dequeue();
+//    queue.dequeue();
+//    cout << queue.front() << ' ' << queue.size() << ' ';
+//    queue.print();
+
+
 //// Circular linked list testing:
 
 //    CircularLinkedList<int> list;
