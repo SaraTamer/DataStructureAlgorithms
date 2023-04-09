@@ -74,12 +74,14 @@ int main()
 //// Doubly linked list testing:
 
 //    DoublyLinkedList<int> list;
+//
 //    list.insertAtHead(3 );
 //    list.insertAtHead(4 );
 //    list.insertAtHead(2 );
 //    list.insertAt(100 , 2);
 //    list.insertAt(200 , 1);
 //    list.replaceAt(500 , 4);
+
 //    list.removeAtHead();
 //    list.removeAtTail();
 //    list.removeAt(1);
