@@ -82,7 +82,8 @@ int main()
 //    list.insertAt(200 , 1);
 //    list.reverse();
 //    list.replaceAt(500 , 4);
-//
+//    list.swap(3,4);
+
 //    list.removeAtHead();
 //    list.removeAtTail();
 //    list.removeAt(1);
