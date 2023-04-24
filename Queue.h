@@ -32,44 +32,11 @@ public:
         }
         arr = new T[maxSz];
     }
-    void enqueue(T item)
-    {
-        if(isFull())
-        {
-            cout << "The queue is FULL!\n";
-            return;
-        }
-        arr[sz] = item;
-        rear = (rear + 1) % maxSz;
-        sz++;
-    }
-    void dequeue()
-    {
-        if(isEmpty())
-        {
-            cout << "The queue is EMPTY!\n";
-            return;
-        }
-        front = (front + 1) % maxSz;
-        sz--;
-    }
-    void print()
-    {
-        for(ll i = front , j = 0; j < sz ; i = (i+1) % maxSz , j++)
-        {
-            cout << arr[i] << ' ';
-        }
-        cout << '\n';
-    }
-    T first()
-    {
-        if(isEmpty())
-        {
-            cout << "The list is EMPTY!\n";
-            exit(1);
-        }
-        return arr[front];
-    }
+    void enqueue(T item);
+    void dequeue();
+    void print();
+    T first();
+
     void clear(){sz = 0; arr = nullptr;}
     ll size(){return sz;}
     bool isEmpty(){return (sz == 0);}
@@ -77,4 +44,46 @@ public:
     ~CircularQueue(){delete[] arr;}
 };
 
+template <class T>
+void CircularQueue<T>::enqueue(T item)
+{
+    if(isFull())
+    {
+        cout << "The queue is FULL!\n";
+        return;
+    }
+    arr[sz] = item;
+    rear = (rear + 1) % maxSz;
+    sz++;
+}
+template <class T>
+void CircularQueue<T>::dequeue()
+{
+    if(isEmpty())
+    {
+        cout << "The queue is EMPTY!\n";
+        return;
+    }
+    front = (front + 1) % maxSz;
+    sz--;
+}
+template <class T>
+void CircularQueue<T>::print()
+{
+    for(ll i = front , j = 0; j < sz ; i = (i+1) % maxSz , j++)
+    {
+        cout << arr[i] << ' ';
+    }
+    cout << '\n';
+}
+template <class T>
+T CircularQueue<T>::first()
+{
+    if(isEmpty())
+    {
+        cout << "The list is EMPTY!\n";
+        exit(1);
+    }
+    return arr[front];
+}
 #endif //DATASTRUCTUREALGORITHMS_QUEUE_H
